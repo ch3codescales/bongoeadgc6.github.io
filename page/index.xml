@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 22 Jun 2020 23:07:00 -0400</lastBuildDate><atom:link href="https://bongoeadgc6.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Home</title>
+      <link>https://bongoeadgc6.github.io/page/home/</link>
+      <pubDate>Mon, 22 Jun 2020 23:07:00 -0400</pubDate>
+      
+      <guid>https://bongoeadgc6.github.io/page/home/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>https://bongoeadgc6.github.io/page/about/</link>
       <pubDate>Mon, 22 Jun 2020 22:32:00 -0400</pubDate>
@@ -23,15 +32,6 @@ Current Projects:
       <pubDate>Mon, 22 Jun 2020 23:07:00 -0400</pubDate>
       
       <guid>https://bongoeadgc6.github.io/page/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Home</title>
-      <link>https://bongoeadgc6.github.io/page/home/</link>
-      <pubDate>Mon, 22 Jun 2020 23:07:00 -0400</pubDate>
-      
-      <guid>https://bongoeadgc6.github.io/page/home/</guid>
       <description></description>
     </item>
     
