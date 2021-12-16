@@ -10,7 +10,7 @@ aren&rsquo;t allowed to send outbound traffic to a server they didn&rsquo;t own.
 of the latter group. In order to comply with our rules, we needed to find a reliable way to scan our
 devices for the vulnerability and look for requests to a domain that we owned.</p><p>In order to know what to look for, you have to understand what happens with this vulnerability.</p><p>When the vulnerability is executed, the log4j module navigates to the address provided in the payload.</p><p><code>${jndi:ldap://log4shelltest.company.pvt:1389/somerndmstr}</code></p><p>In the above payload, the targeted host that recieves the data will attempt to resolve
 &ldquo;log4shelltest.company.pvt&rdquo; to make a connection. If you own the domain/subdomain you can track for DNS query logs for that domain.</p><p>In order to achieve this, we setup 2 DNS servers (internally and externally) and utilized nmap
-scripts (found here)[https://github.com/Diverto/nse-log4shell]. Scanning each host and sending the
+scripts <a href=https://github.com/Diverto/nse-log4shell>found here</a>. Scanning each host and sending the
 payload for our domain with a unique subdomain address, we were able to isolate the calling host to the
 query made to the server and could easily track down the offending host.</p><p>To prove the initial concept, we used a vulnerable application provided by the community. There are many
 like it but the one we used can be found here: <a href=https://github.com/kozmer/log4j-shell-poc>https://github.com/kozmer/log4j-shell-poc</a></p><p>Good luck to all of you out there and hope this could be helpful to some.</p></div><div class=footer><div class=tags><i class="fa fa-tags"></i><div class=links><a href=https://bongoeadgc6.github.io/tags/java/>java</a>
