@@ -1,0 +1,20 @@
+[en]
+  languageName = "English"
+  weight = 1
+  title = "Cliff Hults"
+
+  [en.params]
+    displayName = "Cliff Hults"
+    isoCode = "en"
+    rtl = false
+    dateFormat = "January 2, 2006"
+    logo = ""
+    description = "Staff DevOps Engineer · Platform · Cloud · AI"
+    [en.params.author]
+      name = "Cliff Hults"
+      headline = "Staff DevOps Engineer · Platform · Cloud · AI"
+      bio = "12+ years building cloud infrastructure, CI/CD platforms, and distributed systems. Currently at CyberArk. AWS Certified. Writing about DevOps, platform engineering, and AI in production."
+      links = [
+        { linkedin = "https://linkedin.com/in/cliff-hults-iii" },
+        { github = "https://github.com/BongoEADGC6" },
+      ]

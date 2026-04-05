@@ -1,0 +1,13 @@
+baseURL = "https://www.haguest.com/"
+languageCode = "en-US"
+title = "Cliff Hults"
+theme = "blowfish"
+
+[pagination]
+  pagerSize = 10
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+enableRobotsTXT = true

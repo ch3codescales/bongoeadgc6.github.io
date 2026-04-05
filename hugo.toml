@@ -1,0 +1,4 @@
+baseURL = "https://www.haguest.com/"
+languageCode = "en-US"
+title = "Cliff Hults"
+theme = "blowfish"
