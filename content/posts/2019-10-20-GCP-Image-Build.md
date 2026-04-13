@@ -10,6 +10,8 @@ In my last post, I opened with the fact that my company has decided to dive into
 
 Our current image is based on CentOS 6.8, so I needed to create kickstart scripts, some provisioning scripts, and then create some post processing steps to get it all into GCP without interaction.
 
-# TODO
-# GRUB changes
-# Google Guest environment challenges.
+## TODO
+
+## GRUB changes
+
+## Google Guest environment challenges.

@@ -1,0 +1,336 @@
+/* =============================================
+   SYNTHWAVE THEME
+   Deep purple / magenta / cyan neon aesthetic
+   ============================================= */
+
+/* --- Keyframes --- */
+
+@keyframes synthwave-bg {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes grid-scroll {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 80px; }
+}
+
+@keyframes neon-pulse-pink {
+  0%, 100% {
+    text-shadow:
+      0 0 4px #ff2d78,
+      0 0 10px #ff2d78,
+      0 0 20px rgb(255 45 120 / 50%);
+  }
+
+  50% {
+    text-shadow:
+      0 0 8px #ff2d78,
+      0 0 20px #ff2d78,
+      0 0 40px rgb(255 45 120 / 80%),
+      0 0 60px rgb(255 45 120 / 30%);
+  }
+}
+
+@keyframes border-glow {
+  0%, 100% { box-shadow: 0 0 8px rgb(0 243 255 / 30%); }
+  50%       { box-shadow: 0 0 16px rgb(0 243 255 / 60%), 0 0 30px rgb(0 243 255 / 20%); }
+}
+
+/* --- Base background --- */
+
+html {
+  background: linear-gradient(-45deg, #0d0221, #13012e, #1e0042, #0a011a, #1a0030);
+  background-size: 400% 400%;
+  animation: synthwave-bg 22s ease infinite;
+  min-height: 100%;
+}
+
+body {
+  background: transparent !important;
+  position: relative;
+}
+
+/* Retro perspective grid at the bottom */
+body::before {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: -20%;
+  right: -20%;
+  height: 45vh;
+  background-image:
+    linear-gradient(rgb(0 243 255 / 18%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(0 243 255 / 18%) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: grid-scroll 4s linear infinite;
+  transform: perspective(400px) rotateX(55deg);
+  transform-origin: bottom center;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, transparent 100%);
+}
+
+/* Subtle scanlines */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgb(0 0 0 / 4%) 3px,
+    rgb(0 0 0 / 4%) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Ensure content sits above grid */
+#top-scroller,
+main,
+header,
+footer,
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Override Blowfish dark background classes --- */
+
+.dark\:bg-neutral-800,
+.dark\:bg-neutral-900,
+.dark\:bg-neutral\/20,
+.dark\:bg-neutral-800\/50 {
+  background-color: transparent !important;
+}
+
+/* Make article/card backgrounds semi-transparent dark purple */
+.dark article,
+.dark .nx-card,
+article {
+  background: rgb(20 4 50 / 75%) !important;
+  backdrop-filter: blur(6px);
+}
+
+/* --- Pagination --- */
+
+[class*="pagination"] a,
+[class*="page"] a {
+  border: 1px solid rgb(0 243 255 / 30%) !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="pagination"] a:hover,
+[class*="page"] a:hover {
+  border-color: #ff2d78 !important;
+  box-shadow: 0 0 12px rgb(255 45 120 / 40%) !important;
+  background: rgb(255 45 120 / 10%) !important;
+}
+
+/* --- Header --- */
+
+header {
+  background: rgb(10 1 26 / 82%) !important;
+  backdrop-filter: blur(14px) saturate(180%) !important;
+  border-bottom: 1px solid rgb(0 243 255 / 25%) !important;
+  box-shadow:
+    0 1px 0 rgb(0 243 255 / 10%),
+    0 4px 20px rgb(0 0 0 / 50%) !important;
+}
+
+/* Site title gradient */
+header .text-xl,
+header a.text-xl,
+header [class*="text-xl"] {
+  background: linear-gradient(90deg, #ff2d78 0%, #bf5fff 50%, #00f3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em;
+}
+
+/* Nav links */
+header nav a,
+header nav button {
+  color: rgb(200 180 255 / 85%) !important;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+header nav a:hover {
+  color: #00f3ff !important;
+  text-shadow: 0 0 8px rgb(0 243 255 / 80%);
+}
+
+/* --- Footer --- */
+
+footer {
+  background: rgb(10 1 26 / 90%) !important;
+  border-top: 1px solid rgb(255 45 120 / 20%) !important;
+  color: rgb(180 150 220 / 70%) !important;
+}
+
+/* --- Typography --- */
+
+h1 {
+  color: #ff2d78 !important;
+  animation: neon-pulse-pink 4s ease-in-out infinite;
+}
+
+h2 {
+  color: #bf5fff !important;
+  text-shadow: 0 0 8px rgb(191 95 255 / 60%);
+}
+
+h3,
+h4 {
+  color: #00f3ff !important;
+  text-shadow: 0 0 6px rgb(0 243 255 / 50%);
+}
+
+.dark p,
+.dark li,
+p,
+li {
+  color: rgb(220 200 255 / 90%) !important;
+}
+
+/* --- Links --- */
+
+a {
+  color: #00f3ff !important;
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover {
+  color: #ff6ec7 !important;
+  text-shadow: 0 0 8px rgb(255 110 199 / 70%);
+}
+
+/* --- Cards (post list) --- */
+
+.card,
+[class*="article-grid"] > *,
+.list article {
+  border: 1px solid rgb(0 243 255 / 20%) !important;
+  border-radius: 8px !important;
+  background: rgb(18 3 42 / 80%) !important;
+  backdrop-filter: blur(8px);
+  animation: border-glow 5s ease-in-out infinite;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.card:hover,
+[class*="article-grid"] > *:hover,
+.list article:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgb(255 45 120 / 70%) !important;
+  box-shadow:
+    0 0 18px rgb(255 45 120 / 35%),
+    0 0 40px rgb(255 45 120 / 12%),
+    0 8px 30px rgb(0 0 0 / 40%) !important;
+  animation: none;
+}
+
+/* Suppress neon-pulse on headings inside cards */
+.card h2,
+.card h3,
+article h2,
+article h3 {
+  animation: none !important;
+}
+
+/* --- Profile block (homepage) --- */
+
+img.rounded-full,
+.rounded-full img,
+[class*="rounded-full"] {
+  border: 2px solid #ff2d78 !important;
+  box-shadow:
+    0 0 10px rgb(255 45 120 / 70%),
+    0 0 22px rgb(255 45 120 / 40%),
+    0 0 45px rgb(255 45 120 / 15%) !important;
+}
+
+.author-name,
+[class*="author"] h1,
+[class*="author"] h2 {
+  background: linear-gradient(90deg, #ff2d78, #bf5fff, #00f3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.author-links a,
+[class*="social"] a {
+  color: rgb(180 150 255 / 80%) !important;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.author-links a:hover,
+[class*="social"] a:hover {
+  color: #ff2d78 !important;
+  text-shadow: 0 0 10px rgb(255 45 120 / 80%);
+}
+
+/* --- Code --- */
+
+pre {
+  border: 1px solid rgb(0 243 255 / 25%) !important;
+  background: rgb(8 1 20 / 90%) !important;
+  box-shadow:
+    0 0 12px rgb(0 243 255 / 10%),
+    inset 0 0 30px rgb(0 0 0 / 30%) !important;
+}
+
+code:not(pre code) {
+  color: #ff6ec7 !important;
+  background: rgb(255 45 120 / 10%) !important;
+  border: 1px solid rgb(255 45 120 / 20%) !important;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+/* --- Horizontal rules --- */
+
+hr {
+  height: 1px !important;
+  margin: 2rem 0 !important;
+  background: linear-gradient(90deg, transparent, rgb(0 243 255 / 40%), rgb(255 45 120 / 40%), transparent) !important;
+  border: none !important;
+  box-shadow: 0 0 6px rgb(0 243 255 / 30%) !important;
+}
+
+/* --- Selection --- */
+
+::selection {
+  background: rgb(255 45 120 / 35%);
+  color: #fff;
+}
+
+/* --- Scrollbar --- */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0221;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff2d78, #bf5fff, #00f3ff);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2d78;
+  box-shadow: 0 0 8px rgb(255 45 120 / 80%);
+}

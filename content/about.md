@@ -4,8 +4,6 @@ date: 2026-04-05
 layout: "simple"
 ---
 
-# Cliff Hults
-
 **Staff DevOps Engineer · Platform · Cloud · AI**
 
 I'm a platform and infrastructure engineer with 12+ years of experience building the systems that ship software at scale. I currently work at **CyberArk** as a Staff DevOps Engineer, leading teams and driving platform modernization across cloud and on-prem environments.
@@ -17,6 +15,7 @@ I'm a platform and infrastructure engineer with 12+ years of experience building
 I specialize in the full lifecycle of platform engineering: designing cloud infrastructure, building CI/CD pipelines, ensuring compliance, and extracting performance out of complex distributed systems.
 
 **Core skills:**
+
 - **Cloud:** AWS (including GovCloud), EKS/the container orchestration platform, Terraform, Pulumi
 - **CI/CD:** the CI/CD platform, our Git platform Enterprise, ArgoCD
 - **Observability:** Grafana, Prometheus, DataDog
