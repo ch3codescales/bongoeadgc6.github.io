@@ -40,7 +40,7 @@ jobs:
         run: npm install --save-dev stylelint stylelint-config-standard
 
       - name: Lint CSS
-        run: npx stylelint "assets/css/**/*.css" --config '{"extends":"stylelint-config-standard","rules":{"custom-property-no-missing-var-function":true,"no-duplicate-selectors":true,"declaration-block-no-duplicate-properties":true}}'
+        run: npx stylelint "assets/css/**/*.css"
 
   markdown-lint:
     name: Markdown lint
