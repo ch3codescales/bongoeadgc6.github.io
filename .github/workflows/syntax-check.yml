@@ -53,13 +53,6 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v16
         with:
           globs: "content/**/*.md"
-          config: |
-            {
-              "default": true,
-              "MD013": false,
-              "MD033": false,
-              "MD041": false
-            }
 
   toml-lint:
     name: TOML lint
