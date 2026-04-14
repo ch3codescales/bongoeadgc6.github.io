@@ -10,6 +10,21 @@
     "color-function-notation": null,
     "import-notation": null,
     "media-feature-range-notation": null,
-    "number-max-precision": null
+    "number-max-precision": null,
+    "shorthand-property-no-redundant-values": null,
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "selector-no-vendor-prefix": null,
+    "comment-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "at-rule-empty-line-before": null,
+    "color-hex-length": null,
+    "font-family-name-quotes": null,
+    "function-url-quotes": null,
+    "string-quotes": null,
+    "unit-disallowed-list": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "no-empty-source": null,
+    "block-no-empty": null
   }
 }
