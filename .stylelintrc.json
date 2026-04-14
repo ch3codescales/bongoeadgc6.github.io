@@ -3,6 +3,8 @@
   "rules": {
     "declaration-no-important": null,
     "no-duplicate-selectors": null,
+    "no-descending-specificity": null,
+    "no-invalid-position-at-import-rule": null,
     "keyframes-name-pattern": null,
     "selector-class-pattern": null,
     "custom-property-pattern": null,
@@ -21,10 +23,9 @@
     "color-hex-length": null,
     "font-family-name-quotes": null,
     "function-url-quotes": null,
-    "string-quotes": null,
-    "unit-disallowed-list": null,
+    "declaration-block-single-line-max-declarations": null,
     "declaration-block-no-redundant-longhand-properties": null,
-    "no-empty-source": null,
-    "block-no-empty": null
+    "length-zero-no-unit": null,
+    "value-keyword-case": null
   }
 }

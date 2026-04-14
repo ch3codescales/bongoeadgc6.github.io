@@ -1,25 +1,8 @@
-/* Fix text blurriness - disable backdrop-filter blur on article content */
-.prose,
-article,
-.article-content,
-main {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-/* Remove any backdrop blur that may cause text to appear blurry */
-.backdrop-blur,
-[class*="backdrop-blur"] {
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
-}
-
 /* ============================================================
    SYNTHWAVE RETRO THEME — Blowfish Custom Override
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap");
 
 /* ── CSS Variables ── */
 :root {
@@ -39,11 +22,29 @@ main {
 }
 
 /* ── Base ── */
-html, body {
+html,
+body {
   background-color: var(--syn-bg) !important;
   color: var(--syn-text) !important;
-  font-family: 'Rajdhani', sans-serif !important;
+  font-family: "Rajdhani", sans-serif !important;
   font-size: 17px;
+}
+
+/* Fix text rendering */
+.prose,
+article,
+.article-content,
+main {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+
+/* Remove backdrop blur that may cause blurriness */
+.backdrop-blur,
+[class*="backdrop-blur"] {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
 }
 
 /* Scanline overlay */
@@ -55,8 +56,8 @@ body::before {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0,0,0,0.15) 2px,
-    rgba(0,0,0,0.15) 4px
+    rgb(0 0 0 / 15%) 2px,
+    rgb(0 0 0 / 15%) 4px
   );
   pointer-events: none;
   z-index: 9999;
@@ -73,8 +74,8 @@ body::after {
   height: 50vh;
   background:
     linear-gradient(transparent 0%, #1a0030 60%),
-    repeating-linear-gradient(90deg, rgba(191,0,255,0.08) 0px, rgba(191,0,255,0.08) 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(0deg, rgba(191,0,255,0.08) 0px, rgba(191,0,255,0.08) 1px, transparent 1px, transparent 60px);
+    repeating-linear-gradient(90deg, rgb(191 0 255 / 8%) 0, rgb(191 0 255 / 8%) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(0deg, rgb(191 0 255 / 8%) 0, rgb(191 0 255 / 8%) 1px, transparent 1px, transparent 60px);
   pointer-events: none;
   z-index: 0;
   perspective: 600px;
@@ -83,38 +84,62 @@ body::after {
 }
 
 /* ── Typography ── */
-h1, h2, h3, h4, h5, h6,
-.article-title, .site-title {
-  font-family: 'Orbitron', monospace !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.article-title,
+.site-title {
+  font-family: "Orbitron", monospace !important;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-h1, .article-title a, .site-title {
+h1,
+.article-title a,
+.site-title {
   color: var(--syn-cyan) !important;
   text-shadow: var(--syn-glow-cyan);
 }
 
-h2 { color: var(--syn-pink) !important; text-shadow: var(--syn-glow-pink); }
-h3 { color: var(--syn-purple) !important; text-shadow: var(--syn-glow-purple); }
+h2 {
+  color: var(--syn-pink) !important;
+  text-shadow: var(--syn-glow-pink);
+}
 
-code, pre, .highlight, kbd {
-  font-family: 'Share Tech Mono', monospace !important;
+h3 {
+  color: var(--syn-purple) !important;
+  text-shadow: var(--syn-glow-purple);
+}
+
+code,
+pre,
+.highlight,
+kbd {
+  font-family: "Share Tech Mono", monospace !important;
   background: var(--syn-surface) !important;
   border: 1px solid var(--syn-border) !important;
   color: var(--syn-cyan) !important;
 }
 
-/* ── Header / Navigation ── */
-header, .header, nav {
-  background: linear-gradient(180deg, #08001a 0%, var(--syn-bg) 100%) !important;
-  border-bottom: 2px solid var(--syn-pink) !important;
-  box-shadow: var(--syn-glow-pink), 0 4px 30px #ff00aa33 !important;
+/* ── Links (broad selectors first to avoid specificity issues) ── */
+a {
+  color: var(--syn-cyan) !important;
+  text-decoration: none !important;
+  transition: color 0.2s, text-shadow 0.2s !important;
+}
+
+a:hover {
+  color: var(--syn-pink) !important;
+  text-shadow: var(--syn-glow-pink) !important;
 }
 
 /* Site title */
-a.site-title, header a[href="/"] {
-  font-family: 'Orbitron', monospace !important;
+a.site-title,
+header a[href="/"] {
+  font-family: "Orbitron", monospace !important;
   font-weight: 900 !important;
   font-size: 1.4rem !important;
   color: var(--syn-cyan) !important;
@@ -123,22 +148,43 @@ a.site-title, header a[href="/"] {
   text-decoration: none !important;
 }
 
+/* ── Header / Navigation ── */
+header,
+.header,
+nav {
+  background: linear-gradient(180deg, #08001a 0%, var(--syn-bg) 100%) !important;
+  border-bottom: 2px solid var(--syn-pink) !important;
+  box-shadow: var(--syn-glow-pink), 0 4px 30px #ff00aa33 !important;
+}
+
 /* Nav links */
-nav a, header a {
-  font-family: 'Orbitron', monospace !important;
+nav a,
+header a {
+  font-family: "Orbitron", monospace !important;
   font-size: 0.75rem !important;
   letter-spacing: 0.12em;
   color: var(--syn-text-dim) !important;
   text-decoration: none !important;
   transition: color 0.2s, text-shadow 0.2s !important;
 }
-nav a:hover, header a:hover {
+
+nav a:hover,
+header a:hover {
   color: var(--syn-pink) !important;
   text-shadow: var(--syn-glow-pink) !important;
 }
 
+/* Article title link hover */
+.article-title a:hover,
+h1:hover {
+  animation: neon-flicker 2s infinite;
+}
+
 /* ── Cards / Articles ── */
-.card, article, .article-card, [class*="card"] {
+.card,
+article,
+.article-card,
+[class*="card"] {
   background: var(--syn-surface) !important;
   border: 1px solid var(--syn-border) !important;
   border-radius: 2px !important;
@@ -147,35 +193,35 @@ nav a:hover, header a:hover {
   transition: border-color 0.25s, box-shadow 0.25s !important;
 }
 
-.card:hover, article:hover, .article-card:hover {
+.card:hover,
+article:hover,
+.article-card:hover {
   border-color: var(--syn-pink) !important;
-  box-shadow: var(--syn-glow-pink), inset 0 0 30px rgba(255,0,170,0.06) !important;
+  box-shadow: var(--syn-glow-pink), inset 0 0 30px rgb(255 0 170 / 6%) !important;
+  animation: glow-pulse 2s ease-in-out infinite;
 }
 
 /* Top accent bar */
-.card::before, .article-card::before {
+.card::before,
+.article-card::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--syn-purple), var(--syn-pink), var(--syn-cyan));
   box-shadow: 0 0 10px var(--syn-pink);
 }
 
-/* ── Links ── */
-a {
-  color: var(--syn-cyan) !important;
-  text-decoration: none !important;
-  transition: color 0.2s, text-shadow 0.2s !important;
-}
-a:hover {
-  color: var(--syn-pink) !important;
-  text-shadow: var(--syn-glow-pink) !important;
-}
-
 /* ── Buttons / Tags ── */
-.badge, .tag, button, .btn, [class*="badge"], [class*="tag"] {
-  font-family: 'Orbitron', monospace !important;
+.badge,
+.tag,
+button,
+.btn,
+[class*="badge"],
+[class*="tag"] {
+  font-family: "Orbitron", monospace !important;
   font-size: 0.65rem !important;
   letter-spacing: 0.1em;
   background: transparent !important;
@@ -185,15 +231,25 @@ a:hover {
   border-radius: 0 !important;
   transition: all 0.2s !important;
 }
-.badge:hover, .tag:hover, button:hover {
+
+.badge:hover,
+.tag:hover,
+button:hover {
   background: var(--syn-purple) !important;
   color: var(--syn-bg) !important;
   box-shadow: var(--syn-glow-purple) !important;
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; background: var(--syn-bg); }
-::-webkit-scrollbar-track { background: var(--syn-bg2); }
+::-webkit-scrollbar {
+  width: 6px;
+  background: var(--syn-bg);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--syn-bg2);
+}
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--syn-pink), var(--syn-purple));
   border-radius: 0;
@@ -204,45 +260,65 @@ footer {
   background: var(--syn-bg2) !important;
   border-top: 2px solid var(--syn-purple) !important;
   box-shadow: 0 -4px 20px #bf00ff33 !important;
-  font-family: 'Share Tech Mono', monospace !important;
+  font-family: "Share Tech Mono", monospace !important;
   font-size: 0.8rem !important;
   color: var(--syn-text-dim) !important;
 }
 
 /* ── Hero / Cover image overlays ── */
-.hero, [class*="hero"], .cover, [class*="cover"] {
+.hero,
+[class*="hero"],
+.cover,
+[class*="cover"] {
   position: relative;
 }
-.hero::after, [class*="cover"]::after {
+
+.hero::after,
+[class*="cover"]::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
     transparent 30%,
-    rgba(255,0,170,0.2) 70%,
-    rgba(10,0,16,0.9) 100%
+    rgb(255 0 170 / 20%) 70%,
+    rgb(10 0 16 / 90%) 100%
   );
   pointer-events: none;
 }
 
 /* ── Article prose ── */
-.prose, article .content, .article-content {
+.prose,
+article .content,
+.article-content {
   color: var(--syn-text) !important;
   line-height: 1.8 !important;
 }
-.prose p { color: var(--syn-text) !important; }
-.prose strong { color: var(--syn-yellow) !important; font-weight: 700; }
-.prose em { color: var(--syn-pink) !important; font-style: italic; }
+
+.prose p {
+  color: var(--syn-text) !important;
+}
+
+.prose strong {
+  color: var(--syn-yellow) !important;
+  font-weight: 700;
+}
+
+.prose em {
+  color: var(--syn-pink) !important;
+  font-style: italic;
+}
+
 .prose hr {
   border: none !important;
   height: 1px !important;
   background: linear-gradient(90deg, transparent, var(--syn-pink), var(--syn-cyan), transparent) !important;
   margin: 2.5rem 0 !important;
 }
+
 .prose blockquote {
   border-left: 3px solid var(--syn-pink) !important;
-  background: rgba(255,0,170,0.05) !important;
+  background: rgb(255 0 170 / 5%) !important;
   color: var(--syn-text-dim) !important;
   font-style: italic;
   padding: 0.8rem 1.2rem !important;
@@ -250,7 +326,8 @@ footer {
 }
 
 /* ── Table of Contents ── */
-.toc, [class*="toc"] {
+.toc,
+[class*="toc"] {
   background: var(--syn-surface) !important;
   border: 1px solid var(--syn-border) !important;
   border-left: 3px solid var(--syn-cyan) !important;
@@ -258,26 +335,39 @@ footer {
 }
 
 /* ── Pagination ── */
-[class*="pagination"] a, [class*="page"] a {
-  font-family: 'Orbitron', monospace !important;
+[class*="pagination"] a,
+[class*="page"] a {
+  font-family: "Orbitron", monospace !important;
   font-size: 0.7rem !important;
 }
 
-/* ── Neon flicker animation on hero titles ── */
-@keyframes neonFlicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-  20%, 24%, 55% { opacity: 0.85; }
-}
-.article-title a:hover,
-h1:hover {
-  animation: neonFlicker 2s infinite;
+/* ── Animations ── */
+@keyframes neon-flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+
+  20%,
+  24%,
+  55% {
+    opacity: 0.85;
+  }
 }
 
-/* ── Glow pulse on cards ── */
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 6px var(--syn-pink), 0 0 20px #ff00aa22; }
-  50% { box-shadow: 0 0 14px var(--syn-pink), 0 0 40px #ff00aa44; }
-}
-.card:hover, .article-card:hover {
-  animation: glowPulse 2s ease-in-out infinite;
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px var(--syn-pink), 0 0 20px #ff00aa22;
+  }
+
+  50% {
+    box-shadow: 0 0 14px var(--syn-pink), 0 0 40px #ff00aa44;
+  }
 }
