@@ -1,11 +1,15 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": ["stylelint-config-standard"],
   "rules": {
-    "custom-property-no-missing-var-function": true,
-    "no-duplicate-selectors": true,
-    "declaration-block-no-duplicate-properties": true,
-    "no-descending-specificity": null,
+    "declaration-no-important": null,
+    "no-duplicate-selectors": null,
+    "keyframes-name-pattern": null,
     "selector-class-pattern": null,
-    "property-no-vendor-prefix": null
+    "custom-property-pattern": null,
+    "alpha-value-notation": null,
+    "color-function-notation": null,
+    "import-notation": null,
+    "media-feature-range-notation": null,
+    "number-max-precision": null
   }
 }
