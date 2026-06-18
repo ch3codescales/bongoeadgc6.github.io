@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESA Summer 2026 - Submitted Incentives</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { text-align: center; color: #ffd700; margin-bottom: 10px; }
+        h2 { text-align: center; color: #aaa; font-weight: normal; margin-top: 0; margin-bottom: 30px; }
+        .stats { text-align: center; margin-bottom: 30px; color: #888; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th {
+            background: #0f3460;
+            color: #ffd700;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+        th:hover { background: #1a4a7a; }
+        td { padding: 12px; border-bottom: 1px solid #2a2a4e; }
+        tr:hover { background: #1a2a4e; }
+        .game { font-weight: 600; color: #fff; }
+        .category { color: #aaa; font-size: 0.9em; }
+        .incentive { color: #4ecdc4; font-style: italic; max-width: 600px; }
+        .estimate { color: #888; white-space: nowrap; }
+        .console { color: #888; font-size: 0.9em; }
+        .runner { color: #ff6b6b; }
+        .download { text-align: center; margin: 30px 0; }
+        .download a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0f3460;
+            color: #ffd700;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .download a:hover { background: #1a4a7a; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ESA Summer 2026</h1>
+        <h2>Submitted Incentives</h2>
+        <div class="stats">
+            Total Runs: 434 | Runs with Incentives: 37
+        </div>
+        <div class="download">
+            <a href="esa_summer26_incentives.csv" download>Download Incentives CSV</a>
+            <a href="esa_summer26_submissions.csv" download>Download All Submissions CSV</a>
+        </div>
+        <table id="incentivesTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Runner &#9660;</th>
+                    <th onclick="sortTable(1)">Game</th>
+                    <th onclick="sortTable(2)">Category</th>
+                    <th onclick="sortTable(3)">Platform</th>
+                    <th onclick="sortTable(4)">Estimate</th>
+                    <th onclick="sortTable(5)">Incentive Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="runner">mogswe</td>
+                    <td class="game">Mega Man X8 16 - bit</td>
+                    <td class="category">100%</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">55m</td>
+                    <td class="incentive">Mega Man X8 16-bit is a fan-made reimagining of Mega Man X8 in SNES style. This 100% speedrun collects all upgrades while using fast movement, glitches, and optimized routing. The run builds momentum as abilities unlock, leading to faster gameplay and explosive boss fights. Rarely seen at marathons, it offers a fresh yet familiar Mega Man experience. There will also be a possibility showcase the modded character Awakened Zero as an incentive for even more action. 100% (no gateway glitch) require</td>
+                </tr>
+                <tr>
+                    <td class="runner">ocke</td>
+                    <td class="game">Bejeweled 3</td>
+                    <td class="category">Unlock all modes</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">15m</td>
+                    <td class="incentive">The classic match-3 game, where you need to combine 3 or more gems of the same color to create as many or large matches as possible. This mode focuses on unlocking the four bonus modes of the game, showcasing the main modes while doing so. A really nice way to showcase how a simple game can get a lot more replayability through game modes.</td>
+                </tr>
+                <tr>
+                    <td class="runner">jokaah</td>
+                    <td class="game">Hammerin' Harry</td>
+                    <td class="category">Any%</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">15m</td>
+                    <td class="incentive">A fun, short, underrated little platformer with perfect 30s breaks for donation reading ;)
+Not much more to say. You swing a hammer at enemies. Sometimes the hammer is very big. I think this would make a great little race. Beat the game as fast as possible</td>
+                </tr>
+                <tr>
+                    <td class="runner">jokaah</td>
+                    <td class="game">NES micro game relay race (3v3)</td>
+                    <td class="category">3v3 relay race</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">1h</td>
+                    <td class="incentive">6 players, 3 teams, 12 or 15 short (&lt;3 min) NES games back to back! After each game is complete, we swap player and start the next game. 
+The game-list is not nailed down yet, but some alternatives are A Boy and His Blob, Chessmaster, Donkey Kong Jr., Where's Waldo,  Skate or Die, Mickey's Safari in Letterland... etc :) The video is Apollo's "Nintendo Power (Half) Hour" run from a few years ago, which is kinda similar to what we are going for.
+Note: The runners are me, Fleke, Zarconis, Jkl, Apol</td>
+                </tr>
+                <tr>
+                    <td class="runner">fleke</td>
+                    <td class="game">Megaman 1 Coop Race</td>
+                    <td class="category">Any% 2p1c (2 players 1 controller)</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">40m</td>
+                    <td class="incentive">Fleke+Niss3 vs Dxtr+Cartina in an Epic showdown, we will race, 2 players on one controller for each team. One person controlling Dpad + Select and other person doing Start + A + B. All Stages Any%, we will be doing some zips and glitches, nothing that beats stages without killing the bosses though. The difference here will be each team will only have 1 controller on 2 people so as they say, sharing is caring!</td>
+                </tr>
+                <tr>
+                    <td class="runner">mogswe</td>
+                    <td class="game">Mega Man X8 16 - bit</td>
+                    <td class="category">100%</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">55m</td>
+                    <td class="incentive">Mega Man X8 16-bit is a fan-made reimagining of Mega Man X8 in SNES style. This 100% speedrun collects all upgrades while using fast movement, glitches, and optimized routing. The run builds momentum as abilities unlock, leading to faster gameplay and explosive boss fights. Rarely seen at marathons, it offers a fresh yet familiar Mega Man experience. There will also be a possibility showcase the modded character Awakened Zero as an incentive for even more action. 100% (no gateway glitch) require</td>
+                </tr>
+                <tr>
+                    <td class="runner">ocke</td>
+                    <td class="game">Bejeweled 3</td>
+                    <td class="category">Unlock all modes</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">15m</td>
+                    <td class="incentive">The classic match-3 game, where you need to combine 3 or more gems of the same color to create as many or large matches as possible. This mode focuses on unlocking the four bonus modes of the game, showcasing the main modes while doing so. A really nice way to showcase how a simple game can get a lot more replayability through game modes.</td>
+                </tr>
+                <tr>
+                    <td class="runner">jokaah</td>
+                    <td class="game">Hammerin' Harry</td>
+                    <td class="category">Any%</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">15m</td>
+                    <td class="incentive">A fun, short, underrated little platformer with perfect 30s breaks for donation reading ;)
+Not much more to say. You swing a hammer at enemies. Sometimes the hammer is very big. I think this would make a great little race. Beat the game as fast as possible</td>
+                </tr>
+                <tr>
+                    <td class="runner">jokaah</td>
+                    <td class="game">NES micro game relay race (3v3)</td>
+                    <td class="category">3v3 relay race</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">1h</td>
+                    <td class="incentive">6 players, 3 teams, 12 or 15 short (&lt;3 min) NES games back to back! After each game is complete, we swap player and start the next game. 
+The game-list is not nailed down yet, but some alternatives are A Boy and His Blob, Chessmaster, Donkey Kong Jr., Where's Waldo,  Skate or Die, Mickey's Safari in Letterland... etc :) The video is Apollo's "Nintendo Power (Half) Hour" run from a few years ago, which is kinda similar to what we are going for.
+Note: The runners are me, Fleke, Zarconis, Jkl, Apol</td>
+                </tr>
+                <tr>
+                    <td class="runner">fleke</td>
+                    <td class="game">Megaman 1 Coop Race</td>
+                    <td class="category">Any% 2p1c (2 players 1 controller)</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">40m</td>
+                    <td class="incentive">Fleke+Niss3 vs Dxtr+Cartina in an Epic showdown, we will race, 2 players on one controller for each team. One person controlling Dpad + Select and other person doing Start + A + B. All Stages Any%, we will be doing some zips and glitches, nothing that beats stages without killing the bosses though. The difference here will be each team will only have 1 controller on 2 people so as they say, sharing is caring!</td>
+                </tr>
+                <tr>
+                    <td class="runner">niss3</td>
+                    <td class="game">Maniac Mansion</td>
+                    <td class="category">Miscellaneous</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">20m</td>
+                    <td class="incentive">Maniac Mansion is interesting in the way that it has multiple endings. Generally we only use the fastest one in speedruns so you never get to see the alternative endings in speedruns. Bid war for which misc category with alternative ending I will showcase (Meteor Police, Talk show, Talk show twist, Rockstar or Photographer)</td>
+                </tr>
+                <tr>
+                    <td class="runner">rebeldragon95</td>
+                    <td class="game">Ultimate Marvel vs Capcom 3</td>
+                    <td class="category">Arcade Mode Very Easy</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">12m</td>
+                    <td class="incentive">The PC port of the 2nd version of Marvel vs Capcom 3. A run through the games arcade mode (submission video is from another marathon where I did this, here is my PB https://youtu.be/1N2agTIyDs4?si=mYvKNdFKfG55qPtq). Possible for donation incentive for team etc.</td>
+                </tr>
+                <tr>
+                    <td class="runner">leahkazuno</td>
+                    <td class="game">Yohane the Parhelion -BLAZE in the DEEPBLUE-</td>
+                    <td class="category">Any%</td>
+                    <td class="console">Switch</td>
+                    <td class="estimate">55m</td>
+                    <td class="incentive">Yohane the Parhelion -BLAZE in the DEEPBLUE-, released November 2023, is a game that nobody saw coming: a Metroidvania, based on a spin-off of the Love Live! anime series. Although the game is fairly new, the route is well-established and makes smart use of what the underwater dungeon offers us. With very quick and flashy kills that can be done on the 21 bossfights, and nine partners to use throughout the game, Any% and All Upgrades (the two main categories) are beatable in under an hour. Any% i</td>
+                </tr>
+                <tr>
+                    <td class="runner">flick</td>
+                    <td class="game">UFO 50</td>
+                    <td class="category">Row 1 Gold Disks</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">2h 15m</td>
+                    <td class="incentive">UFO 50 is a collection of 50 different retro-style games, including a variety of different genres and game lengths. Each game in UFO 50 is its own fully-fledged game, each with their own unique speedruns and strategies. Most UFO 50 categories involve running one of the 50 games, but there are also marathon categories where you beat several of them back to back.
+
+(note: Planet Zoldath is already included in row 1 gold disks, but I submitted it separately, too.) Every UFO 50 run I've done at ESA s</td>
+                </tr>
+                <tr>
+                    <td class="runner">bigjon</td>
+                    <td class="game">Sonic Chaos</td>
+                    <td class="category">Any%</td>
+                    <td class="console">Sega Game Gear</td>
+                    <td class="estimate">17m</td>
+                    <td class="incentive">This is the any% run, no emeralds, just go right and win. Possible Bid War Between the Game Gear and Sega Master System Versions! Handheld greatness as sonic!</td>
+                </tr>
+                <tr>
+                    <td class="runner">bigjon</td>
+                    <td class="game">Super Mario Land 2 DX </td>
+                    <td class="category">Any% Luigi Glitchless</td>
+                    <td class="console">Game Boy Color</td>
+                    <td class="estimate">35m</td>
+                    <td class="incentive">It's the Golden Coins, now in color with this awesome mod + playing as Luigi, and if selected, with the amazing randomizer where we have no clue what level is where, what music will popup, what physics will show up, WHO KNOWS! But it'll be a great wait to show off a classic in an RNG fashion. Oh yeah! It's Mario Land 2, but with Luigi, the better brother.</td>
+                </tr>
+                <tr>
+                    <td class="runner">bigjon</td>
+                    <td class="game">The Price is Right</td>
+                    <td class="category">The Price is Right</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">1h 10m</td>
+                    <td class="incentive">It's the Price is Right, returning for it's winter edition. Full of excitement ,a variety of entertaining runners, an all-star cast of players that we DON'T and WON'T know who they are, and, well, ME! This is the most entertaining array of speedrunning we'll be doing across the entire event, and of course, everyone who attends is invited! This will be a full game of The Price is Right will me and PLENTY of crowd!</td>
+                </tr>
+                <tr>
+                    <td class="runner">bigjon</td>
+                    <td class="game">Sonic The Hedgehog Boss Shuffler</td>
+                    <td class="category">Any% </td>
+                    <td class="console">Sega Genesis</td>
+                    <td class="estimate">50m</td>
+                    <td class="incentive">This is the Sonic Boss Shuffler. Playing through Sonic 1-3 &amp; S&amp;K, the goal is to beat all 42 bosses, but the catch is on ANY boss hit, the game changes to another boss fight amongst the four games. With the toughest settings, up to 42 Boss Fights could be active at the same time! Rings carry over between swaps which could be good AND bad. Donors could donate for seed number or total active bosses. Chaos and Fun! Beat all 42 bosses!</td>
+                </tr>
+                <tr>
+                    <td class="runner">roboo</td>
+                    <td class="game">Ratchet: Deadlocked</td>
+                    <td class="category">Any% no LC</td>
+                    <td class="console">PlayStation 3</td>
+                    <td class="estimate">1h 16m</td>
+                    <td class="incentive">Ratchet: Deadlocked (or Ratchet: Gladiator) is the 4th instalment in the Ratchet &amp; Clank franchise. In terms of speedrunning, it has the clean movement of its predecessors via traversal missions, with its own precision-focused flair managing objective missions, along with some good old fashioned, highly-optimised arena combat.  A good-old honest any% playthrough. We'll complete all campaign missions (&amp; some bonus ones) - but not always in the intended manner :) - before beating the game. We star</td>
+                </tr>
+                <tr>
+                    <td class="runner">couchman</td>
+                    <td class="game">Super Mario Advance</td>
+                    <td class="category">Any%</td>
+                    <td class="console">Game Boy Interface</td>
+                    <td class="estimate">20m</td>
+                    <td class="incentive">Mario 2 on the GBA. Mario and friends find themselves adventuring in a dream world called Subcon, working to defeat the evil ruler Wart. The GBA version has enhanced graphics, but is actually so close to the original that many of the same glitches and tricks apply.  Using warp zones and appropriate character choice, skip all the way to the end of the game and beat the final boss in less than 20 minutes!</td>
+                </tr>
+                <tr>
+                    <td class="runner">couchman</td>
+                    <td class="game">Castlevania: Rondo of Blood</td>
+                    <td class="category">100%</td>
+                    <td class="console">PlayStation 4</td>
+                    <td class="estimate">55m</td>
+                    <td class="incentive">Castlevania: Rondo of Blood is a fast paced outing to Dracula's Castle starring Richter Belmont and Maria Renard, who would both return in Symphony of the Night. Dracula has kidnapped several maidens for his sicko rituals, and it's time to take the fight to him and save Transylvania again. The PS4 version is slightly easier than the original on the Turbografx-16. In 100%, you visit every stage, rescue every maiden, then defeat Dracula. The percentage is tracked on the game's file select, so you </td>
+                </tr>
+                <tr>
+                    <td class="runner">zarc0nis</td>
+                    <td class="game">Super Pitfall</td>
+                    <td class="category">Any%</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">14m</td>
+                    <td class="incentive">Game features Harry trying to save his daughter from the dangerous villains. With the true final boss being THE WALL! Co-op race with mrockstar20, and ApolloSmug (WR holder) on commentary. Any% is the fastest way to use glitches and clips to get to the end. It is easy to consume visually and Apollo will help chat navigate it.</td>
+                </tr>
+                <tr>
+                    <td class="runner">nilssonalex92</td>
+                    <td class="game">Tekken 3</td>
+                    <td class="category">Unlock Theater Mode (No Game Over Abuse, 1 Round</td>
+                    <td class="console">PlayStation</td>
+                    <td class="estimate">1h 10m</td>
+                    <td class="incentive">This category is a niche but well-defined challenge in Tekken 3 speedrunning. The goal is to unlock Theater Mode, a bonus feature that lets you watch character endings and cutscenes, as fast as possible under specific constraints.
+
+Tekken 3 as many knows, is one of the most classic titles of the Playstation game category. No Game Over Abuse
+You cannot intentionally lose and continue to manipulate progress faster. Some categories allow this to skip content or manipulate unlocks, but here it’s ban</td>
+                </tr>
+                <tr>
+                    <td class="runner">nilssonalex92</td>
+                    <td class="game">Rocky (2002) </td>
+                    <td class="category">Movie Mode: Novice</td>
+                    <td class="console">GameCube</td>
+                    <td class="estimate">35m</td>
+                    <td class="incentive">This game, is pretty jank. We all know it, you all saw it during ESA last year. RNG boxing hell from 2002, a RARE made game together with Ubisoft. Kidney train!
+
+Submission video is the "Movie Mode: Champ" from ESA last summer. This is the easy category, just fyi.  You play the game, as fast as possible, beating peoples kidneys up. You autotrain, mashing menus. Beat Apollo, Clubber, Drago and Tommy Gunn.</td>
+                </tr>
+                <tr>
+                    <td class="runner">milanista_00</td>
+                    <td class="game">Blue Prince</td>
+                    <td class="category">Bequest%</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">46m</td>
+                    <td class="incentive">Blue Prince is a rogue-like puzzle game where the objective of the protagonist Simon is to inherit Mount Holly estate, which was left to him by his great uncle. To get Mount Holly you need to find the secret room 46 of the house composed of 45 rooms, this requires to satisfy different win conditions.
+The gameplay consist in clicking on a door and choosing a room from the 3 possible choices that the game offers you. The puzzles and the gameplay are very intriguing, interesting and fun to watch. T</td>
+                </tr>
+                <tr>
+                    <td class="runner">carkoon</td>
+                    <td class="game">LEGO My Style: Preschool</td>
+                    <td class="category">All Games</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">20m</td>
+                    <td class="incentive">LEGO My Style: Preschool is an educational game released in 2000, starring the LEGO Duplo animals that teach children in four subjects - math, art, language and music - by playing various mini-games. It's very similar to other education games released during the early 2000s, such as Reader Rabbit or Putt Putt.  Play all mini-games that the game has to offer in the four subjects: math, art, language and music, from a new file. Time starts when the first mini-game is selected, time ends when the f</td>
+                </tr>
+                <tr>
+                    <td class="runner">apollosmug</td>
+                    <td class="game">Ninja Gaiden Trilogy Relay Race</td>
+                    <td class="category">Trilogy Relay Race (20 vs 20)</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">1h</td>
+                    <td class="incentive">The Ninja Gaiden series is one of the most well known franchises in gaming. In years past ESA has seen Mario and Mega Man relay races, but its now time to step it up and pit two teams of 20 runners against each other in one of the most platforming intense series on the NES. To complete Ninja Gaiden 1 through 3 back to back, Apollo and friends will need determination to survive and the ability to adapt to the previous players' decisions. Ryu is about to have his moment in the sun. Two teams of 20</td>
+                </tr>
+                <tr>
+                    <td class="runner">apollosmug</td>
+                    <td class="game">Mega Man 1-6 46 Robot Masters Relay</td>
+                    <td class="category">46 Robot Masters</td>
+                    <td class="console">Nintendo Entertainment System</td>
+                    <td class="estimate">2h 20m</td>
+                    <td class="incentive">The Classic Mega Man games are back, except this time Apollo and Friends will be racing to defeat all of the Robot Masters from the NES Mega Man series. 46 players will guide Mega Man through platforming excellence in a stage relay.  The above is a linked run of one of the runners who will be at ESA. This category is defeating the robot masters in each game, and then changing to the next game in the Mega Man series in order from 1-6. This is 6 stages in MM1 and then 8 stages in MM 2-6 with 46 pl</td>
+                </tr>
+                <tr>
+                    <td class="runner">neviutz</td>
+                    <td class="game">Digimon Story: Time Stranger</td>
+                    <td class="category">Any% (Hard)</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">4h 15m</td>
+                    <td class="incentive">Latest installment in the Digimon series. The game is very fast paced and feels very smooth to play, even more so in speedruns, which make it a good and balanced run to play/watch despite it being an RPG. Its balance between gameplay and cutscene feels just right, as well as its length for being an RPG speedrun. Its costumes and various language options also allow for some decent donation incentives. Beat the game on the hardest difficulty. Played on current patch to avoid old patch exclusive gl</td>
+                </tr>
+                <tr>
+                    <td class="runner">triadpanda</td>
+                    <td class="game">Stray</td>
+                    <td class="category">any% glitchless</td>
+                    <td class="console">PlayStation 5</td>
+                    <td class="estimate">1h 35m</td>
+                    <td class="incentive">The game gives players a chance to guide a lost cat through a strange city while trying to get back to its friends. It is filled with a multitude of gaming mechanics such as puzzle solving, platforming, stealth and action-filled sequences. During the game you will encounter a group of robots who will help and guide you through the city, with a captivating story. During the run there will be many opportunities for donation reading or other messages. Complete the run as fast as possible wihtout an</td>
+                </tr>
+                <tr>
+                    <td class="runner">nevflinn</td>
+                    <td class="game">Command &amp; Conquer: Red Alert 2 - Yuri's Revenge</td>
+                    <td class="category">Any% (Allied Campaign)</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">1h 15m</td>
+                    <td class="incentive">Bow to Yuri! In the award-winning RTS expansion pack, Yuri reveals his plans to control the world through psychic domination - this run shows the best way to stop him! It demands intense micro and macro, very creative routing through all seven missions and their easter eggs, and the fastest way is on the hardest mode? We must race to contest insanely tight cycles and manage an intense amount of variable tasks all at once, offset with vintage Westwood charm. This promises to be a run to remember!</td>
+                </tr>
+                <tr>
+                    <td class="runner">nevflinn</td>
+                    <td class="game">Command &amp; Conquer: Red Alert 2 - Yuri's Revenge</td>
+                    <td class="category">Any% (Soviet)</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">45m</td>
+                    <td class="incentive">Bow to Yuri! The Soviets may have lost the war, but they can win the battle that counts as they hijack the time machine and get revenge on Yurii. This run shows RTS micro and macro in a tight time frame, with numerous audience-pleasing shortcuts and easter eggs to show how sharp knowledge and thorough routing can make a hard game look easy Run starts upon selecting the campaign and ends upon the last mission complete screen</td>
+                </tr>
+                <tr>
+                    <td class="runner">xem92</td>
+                    <td class="game">Clone Hero Rock Concert</td>
+                    <td class="category">ROCK CONCERT%</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">1h 30m</td>
+                    <td class="incentive">I've assembled a team of 4 of the best plastic musicians the world has ever seen. Me, Jarvis9999, WarDrums_, and SixRockFire. The four of us would go on stage for 60-90 minutes and put on a rock concert through the game Clone Hero. We'd create our own setlist, perform it for a live audience, and melt faces. Check my video link for more details. In Clone Hero, we can play from thousands of different songs, so we'll put together a setlist between 60-90 minutes of all the classics. Songs people rem</td>
+                </tr>
+                <tr>
+                    <td class="runner">sylwer</td>
+                    <td class="game">Dragon Quest Monsters 3</td>
+                    <td class="category">any%</td>
+                    <td class="console">PC</td>
+                    <td class="estimate">4h</td>
+                    <td class="incentive">After the success of Dragon Quest Monster Joker 1 &amp; 2 outside japan (3 only came out in jp), Dragon Quest Monsters 3 is the most recent Monster spin-off released around the world! It tells the story of Psaro, the vilain of Dragon Quest IV, who became a monster wrangler to rule on Nadiria. In this game you will control up to 4 monsters in battle, that you can either scout in different biomes or synthesis together to create even more powerful monsters. It has Cutscene skip &amp; fast battle animations</td>
+                </tr>
+                <tr>
+                    <td class="runner">r4nd0mz</td>
+                    <td class="game">Yu-Gi-Oh! 5D's Tag Force 4</td>
+                    <td class="category">Any% (Misty)</td>
+                    <td class="console">PlayStation Portable</td>
+                    <td class="estimate">55m</td>
+                    <td class="incentive">Based on the 2008 series of the anime, this children's card game video game does not feature any motorcycles but gameplay a lot closer to the real card game than games in the franchise previously shown at ESA. The gimmick of the Tag Force series is tag duels, which means that the player not only has to worry about their opponents, but also their cpu tag partner's incompetence in up to four duels per run. The Tag Force games feature many potential tag partners, but in this game, the optimal choic</td>
+                </tr>
+                <tr>
+                    <td class="runner">abtwisty</td>
+                    <td class="game">Pokémon White 2 - Nintendo DS</td>
+                    <td class="category">Any%</td>
+                    <td class="console">Nintendo DS</td>
+                    <td class="estimate">3h 30m</td>
+                    <td class="incentive">The sequels to Pokemon Black/White set in the Unova region. This run shows the famous route of using Drilbur and Excadrill as the clear choices to beat the game fast. While there aren't many glitches, there are interesting strategies involving RNG manipulation that is different for each runners console, which makes a novel and unique experience to watch and do runs. The story takes centre stage and the pokémon battles are risky but just right.  Heavy use of RNG manipulation and new routing has m</td>
+                </tr>
+                <tr>
+                    <td class="runner">xylexsr</td>
+                    <td class="game">Super Mario 3D World + Bowsers Fury</td>
+                    <td class="category">3D World any%</td>
+                    <td class="console">Switch 2</td>
+                    <td class="estimate">1h 30m</td>
+                    <td class="incentive">Super Mario 3D World is an exciting speed game filled with fast paced movement and massive skips. Released for the Switch in 2021 it has fostered a dedicated and active speedrunning scene aiming to make Luigi/Toad/Peach beat the game in as little time as possible. With 12 unique worlds to explore it offers a dynamic speedrunnning expereince for those who play and enjoy the game Any% Involves collecting 170 Green stars and completing the final stage in World Bowser (World 8). It includes many lev</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function sortTable(n) {
+            var table = document.getElementById("incentivesTable");
+            var switching = true;
+            var dir = "asc";
+            var switchcount = 0;
+            while (switching) {
+                switching = false;
+                var rows = table.rows;
+                for (var i = 1; i < (rows.length - 1); i++) {
+                    var x = rows[i].getElementsByTagName("TD")[n];
+                    var y = rows[i + 1].getElementsByTagName("TD")[n];
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                            switching = true;
+                            break;
+                        }
+                    } else {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                            switching = true;
+                            break;
+                        }
+                    }
+                }
+                if (!switching && switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                    switchcount++;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
