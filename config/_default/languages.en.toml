@@ -1,20 +1,25 @@
-[en]
-  languageName = "English"
-  weight = 1
-  title = "Cliff Hults"
+# NOTE: This file is already scoped to the "en" language by its filename
+# (languages.en.toml). Its contents must therefore be the language config
+# itself -- do NOT wrap them in an [en] table, or Hugo resolves them as
+# languages.en.en and silently discards the entire file.
 
-  [en.params]
-    displayName = "Cliff Hults"
-    isoCode = "en"
-    rtl = false
-    dateFormat = "January 2, 2006"
-    logo = ""
-    description = "Staff DevOps Engineer · Platform · Cloud · AI"
-    [en.params.author]
-      name = "Cliff Hults"
-      headline = "Staff DevOps Engineer · Platform · Cloud · AI"
-      bio = "12+ years building cloud infrastructure, CI/CD platforms, and distributed systems. Currently at CyberArk. AWS Certified. Writing about DevOps, platform engineering, and AI in production."
-      links = [
-        { linkedin = "https://linkedin.com/in/cliff-hults-iii" },
-        { github = "https://github.com/BongoEADGC6" },
-      ]
+languageName = "English"
+weight = 1
+title = "Cliff Hults"
+
+[params]
+  displayName = "Cliff Hults"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "January 2, 2006"
+  logo = ""
+  description = "Staff DevOps Engineer · Platform · Cloud · AI"
+
+  [params.author]
+    name = "Cliff Hults"
+    headline = "Staff DevOps Engineer · Platform · Cloud · AI"
+    bio = "12+ years building cloud infrastructure, CI/CD platforms, and distributed systems. Currently at CyberArk. AWS Certified. Writing about DevOps, platform engineering, and AI in production."
+    links = [
+      { linkedin = "https://linkedin.com/in/cliff-hults-iii" },
+      { github = "https://github.com/BongoEADGC6" },
+    ]
