@@ -6,6 +6,11 @@ theme = "blowfish"
 [pagination]
   pagerSize = 10
 
+# Required by Blowfish's search: the JSON output is the Fuse.js index
+# that /index.json serves. Without it the search modal silently returns nothing.
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [sitemap]
   changefreq = "weekly"
   priority = 0.5

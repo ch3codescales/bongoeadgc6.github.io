@@ -7,6 +7,10 @@
 
 colorScheme = "fuchsia"
 defaultAppearance = "dark" # valid options: light or dark
+# NOTE: kept false deliberately. assets/css/custom.css sets the synthwave
+# palette unconditionally (no .dark scoping), so enabling light mode renders
+# Tailwind light-mode text on forced-dark surfaces -- as low as 1.15:1 contrast.
+# Scope custom.css under .dark before turning this on.
 autoSwitchAppearance = false
 
 enableA11y = false
@@ -53,9 +57,9 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 [homepage]
   layout = "profile" # valid options: page, profile, hero, card, background, custom
   #homepageImage = "IMAGE.jpg" # used in: hero, and card
-  showRecent = false
+  showRecent = true
   showRecentItems = 5
-  showMoreLink = false
+  showMoreLink = true
   showMoreLinkDest = "/posts/"
   cardView = false
   cardViewScreenWidth = false
@@ -87,7 +91,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showTableOfContents = false
   # showRelatedContent = false
   # relatedContentLimit = 3
-  showTaxonomies = false # use showTaxonomies OR showCategoryOnly, not both
+  showTaxonomies = true # use showTaxonomies OR showCategoryOnly, not both
   showCategoryOnly = false # use showTaxonomies OR showCategoryOnly, not both
   showAuthorsBadges = false
   showWordCount = true
