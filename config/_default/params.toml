@@ -7,11 +7,10 @@
 
 colorScheme = "fuchsia"
 defaultAppearance = "dark" # valid options: light or dark
-# NOTE: kept false deliberately. assets/css/custom.css sets the synthwave
-# palette unconditionally (no .dark scoping), so enabling light mode renders
-# Tailwind light-mode text on forced-dark surfaces -- as low as 1.15:1 contrast.
-# Scope custom.css under .dark before turning this on.
-autoSwitchAppearance = false
+# NOTE: assets/css/custom.css now scopes the synthwave palette under .dark,
+# so light mode falls back to Blowfish's stock light theme instead of
+# rendering light-mode text on forced-dark surfaces. Safe to auto-switch.
+autoSwitchAppearance = true
 
 enableA11y = false
 enableSearch = true
