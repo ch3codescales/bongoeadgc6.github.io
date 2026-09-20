@@ -39,5 +39,5 @@ I specialize in the full lifecycle of platform engineering: designing cloud infr
 ## Find Me
 
 - [LinkedIn](https://linkedin.com/in/cliff-hults-iii)
-- [our Git platform](https://github.com/BongoEADGC6)
+- [our Git platform](https://github.com/ch3codescales)
 - [Email](mailto:cliff.hults@gmail.com)

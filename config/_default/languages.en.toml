@@ -21,5 +21,5 @@ title = "Cliff Hults"
     bio = "12+ years building cloud infrastructure, CI/CD platforms, and distributed systems. Currently at CyberArk. AWS Certified. Writing about DevOps, platform engineering, and AI in production."
     links = [
       { linkedin = "https://linkedin.com/in/cliff-hults-iii" },
-      { github = "https://github.com/BongoEADGC6" },
+      { github = "https://github.com/ch3codescales" },
     ]
