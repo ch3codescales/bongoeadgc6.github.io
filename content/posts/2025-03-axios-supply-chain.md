@@ -3,7 +3,7 @@ title: "Supply Chain Attacks Start in Your Build Cache"
 date: 2026-04-11
 draft: false
 description: "When axios 1.14.1 introduced a malicious dependency, our artifact repository cache kept serving it long after npm pulled it. Here's how we investigated, contained, and hardened against it."
-tags: ["Security", "DevOps", "CI/CD", "Supply Chain", "npm", "Artifact Management", "the container orchestration platform"]
+tags: ["Security", "DevOps", "CI/CD", "Supply Chain", "npm", "Artifact Management", "Container Orchestration"]
 categories: ["Engineering"]
 ---
 
@@ -45,7 +45,7 @@ During that three-hour window, the latest matching version was `1.14.1`. Any pip
 
 ## Containment
 
-Once we confirmed which build agents had been affected, we traced them to their specific the container orchestration platform worker nodes. We treated those nodes as compromised.
+Once we confirmed which build agents had been affected, we traced them to their specific worker nodes on our container orchestration platform. We treated those nodes as compromised.
 
 The containerized workload model worked in our favor here. Because the build agents were isolated containers, the blast radius was constrained. We quarantined the affected nodes, captured the volumes for forensic inspection, removed the nodes from the cluster, and terminated them after completing our investigation. No malicious files or indicators of active compromise were found, but we weren't willing to leave that to chance.
 
