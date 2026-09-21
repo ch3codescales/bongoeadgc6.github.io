@@ -1,29 +1,29 @@
 ---
-title: "When Your Security Tool Goes Down: Surviving a the SCA tool Outage"
+title: "When Your Security Tool Goes Down: Surviving an SCA Tool Outage"
 date: 2026-04-12
 draft: false
-description: "the SCA tool went down for 5 hours and took our entire development workflow with it. Here's the decision we made, why we made it, and what we learned."
-tags: ["Security", "DevOps", "CI/CD", "the SCA tool", "Incident Response", "Supply Chain"]
+description: "An SCA tool went down for 5 hours and took our entire development workflow with it. Here's the decision we made, why we made it, and what we learned."
+tags: ["Security", "DevOps", "CI/CD", "SCA Tool", "Incident Response", "Supply Chain"]
 categories: ["Engineering"]
 ---
 
 Security tooling exists to protect your organization. But what happens when the security tool itself becomes the outage?
 
-That's the situation we found ourselves in when the SCA tool experienced a service disruption that lasted approximately five hours. For us, it wasn't a degraded experience — it was a complete development freeze.
+That's the situation we found ourselves in when an SCA tool experienced a service disruption that lasted approximately five hours. For us, it wasn't a degraded experience — it was a complete development freeze.
 
 <!--more-->
 
-## How We Use the SCA tool
+## How We Use the SCA Tool
 
-the SCA tool is integrated into our standard CI/CD pipeline as a mandatory gate on every pull request. It handles three things: static code analysis for insecure patterns, dependency scanning for known vulnerabilities and licensing issues, and container image scanning. These checks are enforced as required status checks in our Git platform — a PR cannot merge until they pass.
+The SCA tool is integrated into our standard CI/CD pipeline as a mandatory gate on every pull request. It handles three things: static code analysis for insecure patterns, dependency scanning for known vulnerabilities and licensing issues, and container image scanning. These checks are enforced as required status checks in our Git platform — a PR cannot merge until they pass.
 
 This isn't optional tooling. It's business compliance and security enforcement baked into the development workflow. Every repository is enrolled, and historical analysis is maintained for audit purposes.
 
 ## How We Found Out
 
-We didn't find out because a developer filed a ticket. We found out because our backend monitoring started firing — communication to the SCA tool's API had failed, and failed the SCA tool status checks were spiking across the board. Developers hit it almost simultaneously as they tried to merge work during normal business hours.
+We didn't find out because a developer filed a ticket. We found out because our backend monitoring started firing — communication to the SCA tool's API had failed, and failed status checks were spiking across the board. Developers hit it almost simultaneously as they tried to merge work during normal business hours.
 
-Within minutes, it was clear this wasn't a flaky test or a misconfigured repo. the SCA tool was down.
+Within minutes, it was clear this wasn't a flaky test or a misconfigured repo. The SCA tool was down.
 
 ## The Catch-22
 
@@ -49,13 +49,13 @@ During our retrospective, the conversation shifted from "what do we do next time
 
 Two themes emerged:
 
-**Granular bypass controls** — When the SCA tool went down, our only option was a binary one: all the SCA tool checks required, or none. We're investigating whether we can build more surgical controls — for example, temporarily disabling only the dependency scanning component while keeping code analysis active, or allowing bypasses scoped to specific repo classifications. The goal is to have options that don't require choosing between full security and full productivity.
+**Granular bypass controls** — When the SCA tool went down, our only option was a binary one: all checks required, or none. We're investigating whether we can build more surgical controls — for example, temporarily disabling only the dependency scanning component while keeping code analysis active, or allowing bypasses scoped to specific repo classifications. The goal is to have options that don't require choosing between full security and full productivity.
 
 **Tooling redundancy** — Most organizations don't self-host their security tooling, and we're no exception. That means our security posture has an availability dependency on third-party SaaS providers. One tool going down shouldn't mean zero coverage. We're evaluating whether distributing our scanning responsibilities across multiple tools provides meaningful resilience — not just redundancy for its own sake, but genuine defense-in-depth that can survive a single vendor outage.
 
 ## The Uncomfortable Reality
 
-The axios supply chain incident and this the SCA tool outage happened within the same operational period. Back to back, they illustrate the same underlying tension: we build security controls into our pipelines, and then we discover that those controls can themselves become the risk.
+The axios supply chain incident and this SCA tool outage happened within the same operational period. Back to back, they illustrate the same underlying tension: we build security controls into our pipelines, and then we discover that those controls can themselves become the risk.
 
 A cached malicious package is a supply chain problem. A security tool outage blocking all development is a single point of failure problem. Both are worth taking seriously — and both require thinking beyond "add more tools" toward how those tools behave when something goes wrong.
 

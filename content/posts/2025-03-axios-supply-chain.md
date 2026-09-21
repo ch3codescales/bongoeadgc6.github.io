@@ -2,8 +2,8 @@
 title: "Supply Chain Attacks Start in Your Build Cache"
 date: 2026-04-11
 draft: false
-description: "When axios 1.14.1 introduced a malicious dependency, our the artifact repository cache kept serving it long after npm pulled it. Here's how we investigated, contained, and hardened against it."
-tags: ["Security", "DevOps", "CI/CD", "Supply Chain", "npm", "the artifact repository", "the container orchestration platform"]
+description: "When axios 1.14.1 introduced a malicious dependency, our artifact repository cache kept serving it long after npm pulled it. Here's how we investigated, contained, and hardened against it."
+tags: ["Security", "DevOps", "CI/CD", "Supply Chain", "npm", "Artifact Management", "the container orchestration platform"]
 categories: ["Engineering"]
 ---
 
@@ -19,19 +19,19 @@ I came across John Hammond's breakdown of the incident through Huntress. After w
 
 I immediately looped in our product security team and central security architects. We aligned quickly on the need to investigate our exposure and got to work.
 
-## The First Problem: the artifact repository Doesn't Know What It Doesn't Know
+## The First Problem: Artifact Repository Doesn't Know What It Doesn't Know
 
-Our organization uses the artifact repository as a proxy and cache for third-party npm packages. The intent is to reduce external dependency, improve build reliability, and give us a controlled chokepoint for what enters our supply chain. In theory, it's exactly the right architecture for situations like this.
+Our organization uses an artifact repository as a proxy and cache for third-party npm packages. The intent is to reduce external dependency, improve build reliability, and give us a controlled chokepoint for what enters our supply chain. In theory, it's exactly the right architecture for situations like this.
 
 In practice, it had a blind spot.
 
-When `axios@1.14.1` was published, some of our pipelines pulled it through the artifact repository during that three-hour window. the artifact repository cached it. When npm yanked the package, the artifact repository didn't get the memo — it continued serving the cached version to any pipeline that requested it. From the artifact repository's perspective, it was just doing its job.
+When `axios@1.14.1` was published, some of our pipelines pulled it through the artifact repository during that three-hour window. It cached the package. When npm yanked the package, the artifact repository didn't get the memo — it continued serving the cached version to any pipeline that requested it. From the artifact repository's perspective, it was just doing its job.
 
 We were able to check the download count for `axios@1.14.1` in the artifact repository relatively quickly. The numbers confirmed it had been pulled. The harder question was: *by whom?*
 
 ## The Second Problem: A Service Account Tells You Nothing
 
-Our CI/CD pipelines authenticate to the artifact repository using a shared service account. That means every download from every pipeline shows up under the same username in the the artifact repository access logs. The logs are effectively web server access logs — they tell you what was downloaded, but not which team or pipeline requested it.
+Our CI/CD pipelines authenticate to the artifact repository using a shared service account. That means every download from every pipeline shows up under the same username in the artifact repository's access logs. The logs are effectively web server access logs — they tell you what was downloaded, but not which team or pipeline requested it.
 
 To answer that question, we needed to look at the build logs in our CI/CD platform. Those logs weren't piped into a SIEM or centralized logging system. Ingesting them at scale would be expensive, and potentially introduce additional data exposure risk. So our DFIR team did it the hard way — manually searching build logs for specific log lines indicating the `axios@1.14.1` download and the presence of `plain-crypto-js@4.2.0`.
 
@@ -49,7 +49,7 @@ Once we confirmed which build agents had been affected, we traced them to their 
 
 The containerized workload model worked in our favor here. Because the build agents were isolated containers, the blast radius was constrained. We quarantined the affected nodes, captured the volumes for forensic inspection, removed the nodes from the cluster, and terminated them after completing our investigation. No malicious files or indicators of active compromise were found, but we weren't willing to leave that to chance.
 
-We also manually purged `axios@1.14.1` and `plain-crypto-js@4.2.0` from the the artifact repository cache to eliminate the ongoing distribution risk.
+We also manually purged `axios@1.14.1` and `plain-crypto-js@4.2.0` from the artifact repository cache to eliminate the ongoing distribution risk.
 
 ## What We're Doing About It
 
@@ -65,7 +65,7 @@ This incident exposed a few gaps we're now actively closing:
 
 The axios incident is a good case study in how supply chain attacks actually work in practice. The malicious package was live for three hours. That's fast enough to fly under the radar of most security teams — but slow enough to get cached everywhere.
 
-The real risk isn't the registry. It's everything downstream of it: your artifact proxy, your package cache, your pipelines that were running during the window. By the time npm acts, the package may already be sitting in your the artifact repository waiting for the next build to pull it.
+The real risk isn't the registry. It's everything downstream of it: your artifact proxy, your package cache, your pipelines that were running during the window. By the time npm acts, the package may already be sitting in your artifact repository waiting for the next build to pull it.
 
 If you use a package proxy or cache — and you should — make sure you have a plan for what happens when that cache becomes the attack vector rather than the defense.
 
