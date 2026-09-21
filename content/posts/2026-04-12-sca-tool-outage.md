@@ -5,6 +5,8 @@ draft: false
 description: "An SCA tool went down for 5 hours and took our entire development workflow with it. Here's the decision we made, why we made it, and what we learned."
 tags: ["Security", "DevOps", "CI/CD", "SCA Tool", "Incident Response", "Supply Chain"]
 categories: ["Engineering"]
+aliases:
+  - /posts/2026-04-snyk-outage/
 ---
 
 Security tooling exists to protect your organization. But what happens when the security tool itself becomes the outage?
