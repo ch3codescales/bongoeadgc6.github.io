@@ -4,9 +4,9 @@ date: 2026-04-05
 layout: "simple"
 ---
 
-**Staff DevOps Engineer · Platform · Cloud · AI**
+**Platform Engineering Leader · DevSecOps · Cloud · AI**
 
-I'm a platform and infrastructure engineer with 12+ years of experience building the systems that ship software at scale. I currently work at **CyberArk** as a Staff DevOps Engineer, leading teams and driving platform modernization across cloud and on-prem environments.
+I'm a platform and infrastructure engineer with 12+ years of experience building the systems that ship software at scale. I currently work at **Palo Alto Networks** as Manager of DevOps Engineering, leading a team of 8 that owns the security toolchain, policy enforcement, and org-wide security posture strategy. Before moving into management, I architected an enterprise DevSecOps platform there supporting 2,000+ developers. I spent the years before that at **CyberArk**, most recently as Staff DevOps Engineer, leading teams and driving platform modernization across cloud and on-prem environments.
 
 ---
 
@@ -17,7 +17,7 @@ I specialize in the full lifecycle of platform engineering: designing cloud infr
 **Core skills:**
 
 - **Cloud:** AWS (including GovCloud), Kubernetes/EKS, Terraform, Pulumi
-- **CI/CD:** GitHub Enterprise, ArgoCD
+- **CI/CD:** GitHub Enterprise, ArgoCD, Jenkins
 - **Observability:** Grafana, Prometheus, DataDog
 - **Automation:** Ansible, Docker, Python, Go
 - **Security & Compliance:** FedRAMP High, DevSecOps
