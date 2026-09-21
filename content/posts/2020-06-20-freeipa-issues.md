@@ -1,5 +1,5 @@
 ---
-title: "2020 06 20 Freeipa Issues"
+title: "FreeIPA Issues"
 date: 2020-06-21T14:09:12-04:00
 draft: true
 ---

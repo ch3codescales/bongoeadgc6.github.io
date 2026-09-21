@@ -45,6 +45,7 @@ Use specific tool names only when:
 1. The tool's specific behavior, quirk, or limitation is essential to understanding the lesson
 2. You're directly citing or crediting the tool's creators or documentation
 3. You're discussing a specific vendor outage or incident as a case study (use it once for context, then generalize)
+4. The content is a skills list, link label, or resume/credential section on a non-post page (e.g. `about.md`, a future `/skills` or `/resume` page) rather than blog-post narrative prose — these are exempt and must use real product names for readability and ATS/recruiter keyword matching.
 
 Example: "When the SCA tool experienced a service disruption, we learned that security tools can become single points of failure" — use the name once for context, then say "the SCA tool" thereafter.
 

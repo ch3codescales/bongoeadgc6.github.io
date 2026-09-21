@@ -16,8 +16,8 @@ I specialize in the full lifecycle of platform engineering: designing cloud infr
 
 **Core skills:**
 
-- **Cloud:** AWS (including GovCloud), EKS/the container orchestration platform, Terraform, Pulumi
-- **CI/CD:** the CI/CD platform, our Git platform Enterprise, ArgoCD
+- **Cloud:** AWS (including GovCloud), Kubernetes/EKS, Terraform, Pulumi
+- **CI/CD:** GitHub Enterprise, ArgoCD
 - **Observability:** Grafana, Prometheus, DataDog
 - **Automation:** Ansible, Docker, Python, Go
 - **Security & Compliance:** FedRAMP High, DevSecOps
@@ -39,5 +39,5 @@ I specialize in the full lifecycle of platform engineering: designing cloud infr
 ## Find Me
 
 - [LinkedIn](https://linkedin.com/in/cliff-hults-iii)
-- [our Git platform](https://github.com/ch3codescales)
+- [GitHub](https://github.com/ch3codescales)
 - [Email](mailto:cliff.hults@gmail.com)

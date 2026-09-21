@@ -1,7 +1,8 @@
 ---
 title: Building Images for GCP
-date: 2019-09-11T04:00:00Z
+date: 2019-10-20T04:00:00Z
 author: "Cliff Hults"
+description: "Building an automated Packer image pipeline to produce a homebrewed CentOS build for Google Cloud Platform."
 categories: [DevOps]
 tags: [devops, packer, terraform, ansible]
 ---
