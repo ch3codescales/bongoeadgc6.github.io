@@ -21,7 +21,7 @@ The result: enforcement worked, but it became very difficult to manage across an
 
 ## The instinct: add a relief valve
 
-The natural first response is to give people a temporary way around the pressure — an exemption, a waiver, a business-justified exception. I introduced exactly that: a process where a team could temporarily bypass an enforcement block, with the requirement that they commit to repairing the underlying issue later.
+The natural first response is to give people a temporary way around the pressure (an exemption, a waiver, a business-justified exception). I introduced exactly that: a process where a team could temporarily bypass an enforcement block, with the requirement that they commit to repairing the underlying issue later.
 
 On paper it was clean. In practice it taught me a hard lesson.
 
@@ -29,22 +29,22 @@ On paper it was clean. In practice it taught me a hard lesson.
 
 The waiver relieved the *pressure*, but it also relieved the *priority*. Once a team knew they could get a temporary bypass, the urgent work quietly became the deferred work again. The exemption I designed as a safety valve became a deferral mechanism.
 
-The uncomfortable truth: **exceptions shift problems; they rarely solve them.** Every waiver was a moment where "fix it now" became "fix it later" — and "later" has a very long half-life in a busy engineering org.
+The uncomfortable truth: **exceptions shift problems; they rarely solve them.** Every waiver was a moment where "fix it now" became "fix it later," and "later" has a very long half-life in a busy engineering org.
 
 ## What I tell leaders designing exception processes
 
 1. **Assume the exception will be overused.** Whatever fraction you think will use it, it will be higher. Design for that.
 2. **Make exceptions expensive enough to be rare.** If bypassing is as easy as complying, you've built a path of least resistance to *not* fixing things.
 3. **Every exception should have an owner and a deadline.** An open-ended waiver is a permanent vulnerability with extra paperwork.
-4. **Watch what happens with the exceptions — it's your most honest signal.** The waiver rate isn't a compliance stat; it's a UX stat for your security program.
+4. **Watch what happens with the exceptions; it's your most honest signal.** The waiver rate isn't a compliance stat; it's a UX stat for your security program.
 
 ## Why this failure unlocked the real answer
 
-The lesson wasn't "remove the waivers." It was **diagnostic**: the waivers revealed the fundamental problem with enforcement-based security. Enforcement creates urgency, but urgency alone doesn't make remediation *easy*. If the only two options are "suffer the friction" or "use a loophole," people will pick the loophole — and you can't blame them.
+The lesson wasn't "remove the waivers." It was **diagnostic**: the waivers revealed the fundamental problem with enforcement-based security. Enforcement creates urgency, but urgency alone doesn't make remediation *easy*. If the only two options are "suffer the friction" or "use a loophole," people will pick the loophole, and you can't blame them.
 
 That's when I stopped asking *how do we enforce harder* and started asking *why is fixing this so hard in the first place?*
 
-The answer to that question changed everything — and it's the subject of Part 3.
+The answer to that question changed everything, and it's the subject of Part 3.
 
 *This follows [Part 1 — giving the backlog teeth]({{< relref "/posts/2026-02-06-give-the-backlog-teeth" >}}).*
 
