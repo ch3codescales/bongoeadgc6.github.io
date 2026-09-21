@@ -7,7 +7,7 @@ tags: ["Security", "DevOps", "CI/CD", "Supply Chain", "npm", "Artifact Managemen
 categories: ["Engineering"]
 ---
 
-On March 25, 2025, a malicious version of the axios npm package — version 1.14.1 — was published to the npm registry. It contained a bundled dependency called `plain-crypto-js@4.2.0`, which was later confirmed to be malicious. The package was identified and removed from the npm registry within roughly three hours.
+On March 25, 2025, a malicious version of the axios npm package (version 1.14.1) was published to the npm registry. It contained a bundled dependency called `plain-crypto-js@4.2.0`, which was later confirmed to be malicious. The package was identified and removed from the npm registry within roughly three hours.
 
 For most organizations, three hours sounds manageable. For us, it wasn't that simple.
 
@@ -15,7 +15,7 @@ For most organizations, three hours sounds manageable. For us, it wasn't that si
 
 ## How We Found Out
 
-I came across John Hammond's breakdown of the incident through Huntress. After watching it, the severity was clear — this wasn't a theoretical risk. Axios is one of the most widely used HTTP client libraries in the JavaScript ecosystem, and our organization had pipelines using it across multiple teams.
+I came across John Hammond's breakdown of the incident through Huntress. After watching it, the severity was clear: this wasn't a theoretical risk. Axios is one of the most widely used HTTP client libraries in the JavaScript ecosystem, and our organization had pipelines using it across multiple teams.
 
 I immediately looped in our product security team and central security architects. We aligned quickly on the need to investigate our exposure and got to work.
 
@@ -25,23 +25,23 @@ Our organization uses an artifact repository as a proxy and cache for third-part
 
 In practice, it had a blind spot.
 
-When `axios@1.14.1` was published, some of our pipelines pulled it through the artifact repository during that three-hour window. It cached the package. When npm yanked the package, the artifact repository didn't get the memo — it continued serving the cached version to any pipeline that requested it. From the artifact repository's perspective, it was just doing its job.
+When `axios@1.14.1` was published, some of our pipelines pulled it through the artifact repository during that three-hour window. It cached the package. When npm yanked the package, the artifact repository didn't get the memo; it continued serving the cached version to any pipeline that requested it. From the artifact repository's perspective, it was just doing its job.
 
 We were able to check the download count for `axios@1.14.1` in the artifact repository relatively quickly. The numbers confirmed it had been pulled. The harder question was: *by whom?*
 
 ## The Second Problem: A Service Account Tells You Nothing
 
-Our CI/CD pipelines authenticate to the artifact repository using a shared service account. That means every download from every pipeline shows up under the same username in the artifact repository's access logs. The logs are effectively web server access logs — they tell you what was downloaded, but not which team or pipeline requested it.
+Our CI/CD pipelines authenticate to the artifact repository using a shared service account. That means every download from every pipeline shows up under the same username in the artifact repository's access logs. The logs are effectively web server access logs: they tell you what was downloaded, but not which team or pipeline requested it.
 
-To answer that question, we needed to look at the build logs in our CI/CD platform. Those logs weren't piped into a SIEM or centralized logging system. Ingesting them at scale would be expensive, and potentially introduce additional data exposure risk. So our DFIR team did it the hard way — manually searching build logs for specific log lines indicating the `axios@1.14.1` download and the presence of `plain-crypto-js@4.2.0`.
+To answer that question, we needed to look at the build logs in our CI/CD platform. Those logs weren't piped into a SIEM or centralized logging system. Ingesting them at scale would be expensive, and potentially introduce additional data exposure risk. So our DFIR team did it the hard way: manually searching build logs for specific log lines indicating the `axios@1.14.1` download and the presence of `plain-crypto-js@4.2.0`.
 
 ## What We Found
 
 The DFIR team searched for npm install log lines referencing `axios@1.14.1` and `plain-crypto-js@4.2.0`. They found hits.
 
-The affected pipelines weren't directly depending on axios — they were pulling `datadog-ci` and `npm-groovy-lint`, both of which list axios as a dependency. Critically, neither package had pinned an explicit axios version in their `package.json`. They used a minimum version constraint, meaning npm would resolve to the latest matching version available at install time.
+The affected pipelines weren't directly depending on axios; they were pulling `datadog-ci` and `npm-groovy-lint`, both of which list axios as a dependency. Critically, neither package had pinned an explicit axios version in their `package.json`. They used a minimum version constraint, meaning npm would resolve to the latest matching version available at install time.
 
-During that three-hour window, the latest matching version was `1.14.1`. Any pipeline that ran an `npm install` during that period — or afterward, while the cached version remained available in the artifact repository — pulled the malicious package.
+During that three-hour window, the latest matching version was `1.14.1`. Any pipeline that ran an `npm install` during that period (or afterward, while the cached version remained available in the artifact repository) pulled the malicious package.
 
 ## Containment
 
@@ -63,11 +63,11 @@ This incident exposed a few gaps we're now actively closing:
 
 ## The Broader Lesson
 
-The axios incident is a good case study in how supply chain attacks actually work in practice. The malicious package was live for three hours. That's fast enough to fly under the radar of most security teams — but slow enough to get cached everywhere.
+The axios incident is a good case study in how supply chain attacks actually work in practice. The malicious package was live for three hours. That's fast enough to fly under the radar of most security teams, but slow enough to get cached everywhere.
 
 The real risk isn't the registry. It's everything downstream of it: your artifact proxy, your package cache, your pipelines that were running during the window. By the time npm acts, the package may already be sitting in your artifact repository waiting for the next build to pull it.
 
-If you use a package proxy or cache — and you should — make sure you have a plan for what happens when that cache becomes the attack vector rather than the defense.
+If you use a package proxy or cache (and you should), make sure you have a plan for what happens when that cache becomes the attack vector rather than the defense.
 
 ---
 
