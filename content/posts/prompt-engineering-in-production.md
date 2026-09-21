@@ -33,7 +33,7 @@ AWS Bedrock was the right tool here for a few reasons: it's a managed service th
 
 The flow is straightforward:
 
-1. **the CI/CD platform fires a webhook** on every build completion — pass or fail — into an SQS queue
+1. **The CI/CD platform fires a webhook** on every build completion — pass or fail — into an SQS queue
 2. **A Durable Lambda** processes the queue. If the job failed, it captures the console output
 3. The console output is **sent to AWS Bedrock** with a structured prompt for analysis
 4. The **summarized, sanitized output** is forwarded to our Internal Developer Portal (IDP), where the developer can read it directly
