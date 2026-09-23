@@ -21,5 +21,5 @@ title = "Cliff Hults"
     bio = "12+ years building cloud infrastructure, CI/CD platforms, and distributed systems. Now leading DevOps engineering at Palo Alto Networks, after architecting a DevSecOps platform for 2,000+ developers. AWS Certified. Writing about DevOps, platform engineering, and AI in production."
     links = [
       { linkedin = "https://linkedin.com/in/cliff-hults-iii" },
-      { github = "https://github.com/ch3codescales" },
+      { github = "https://github.com/codescales" },
     ]
